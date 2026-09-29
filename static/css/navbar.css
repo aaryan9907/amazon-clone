@@ -247,3 +247,71 @@ header {
     margin-left: 4px;
     line-height: 14px;
 }
+
+/* Sub-Navbar Container */
+.sub_navbar {
+    background-color: #232f3e; /* Amazon's distinct lighter navy blue */
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 14px;
+    overflow-x: auto; /* Allows smooth horizontal scrolling if screen shrinks */
+    white-space: nowrap;
+}
+
+/* Hide scrollbar for a clean look */
+.sub_navbar::-webkit-scrollbar {
+    display: none;
+}
+.sub_navbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.sub_nav_left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.sub_nav_item {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 9px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* "All" button with hamburger icon */
+.all_menu {
+    font-weight: 700;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.all_menu i {
+    font-size: 16px;
+}
+
+/* Right promo highlight */
+.sub_nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.promo_link {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Responsive adjustment: hide promo on narrower screens */
+@media (max-width: 900px) {
+    .sub_nav_right {
+        display: none;
+    }
+}
