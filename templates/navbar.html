@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href= {% static "static/css/navbar.css" %}>
+
+</head>
+<body>
+    <header>
+    <div class="nav_logo border_hover">
+        <img src="{% static 'images/amazon_logo.png' %}" alt="Amazon Logo">
+    </div>
+
+    <div class="location_box border_hover">
+        <i class="fa-solid fa-location-dot loc_icon"></i>
+        <div class="loc_text_container">
+            <span class="loc_label">Deliver to Manauli</span>
+            <span class="loc_update">Update location 140306</span>
+        </div>
+    </div>
+    
+    <div class="nav_search">
+        <select class="search_select">
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="home">Home & Kitchen</option>
+            <option value="books">Books</option>
+            <option value="beauty">Beauty & Personal Care</option>
+        </select>
+        <input type="text" class="search_input" placeholder="Search Amazon.in">
+        <button class="search_button" type="submit" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+
+    <!-- Right-side Navigation Elements -->
+    <div class="nav_right">
+
+        <!-- 1. Language Selector -->
+        <div class="nav_item border_hover lang_box">
+            <span class="flag_icon">🇮🇳</span>
+            <span class="lang_code">EN</span>
+            <i class="fa-solid fa-caret-down nav_caret"></i>
+        </div>
+
+        <!-- 2. Account & Lists -->
+        <div class="nav_item border_hover">
+            <span class="nav_line_one">Hello, sign in</span>
+            <div class="nav_line_two">
+                <span>Account & Lists</span>
+                <i class="fa-solid fa-caret-down nav_caret"></i>
+            </div>
+        </div>
+
+        <!-- 3. Returns & Orders -->
+        <div class="nav_item border_hover">
+            <span class="nav_line_one">Returns</span>
+            <span class="nav_line_two">& Orders</span>
+        </div>
+
+        <!-- 4. Cart -->
+        <div class="nav_item border_hover cart_box">
+            <div class="cart_icon_container">
+                <span class="cart_count">0</span>
+                <i class="fa-solid fa-cart-shopping cart_icon"></i>
+            </div>
+            <span class="cart_text">Cart</span>
+        </div>
+
+    </div>
+
+</header>
+</body>
+</html>
