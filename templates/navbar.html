@@ -4,106 +4,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Amazon Clone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href= {% static "static/css/navbar.css" %}>
-
+    <link rel="stylesheet" href= {% static "css/navbar.css" %}>
 </head>
 <body>
     <header>
-    <div class="nav_logo border_hover">
-        <img src="{% static 'images/amazon_logo.png' %}" alt="Amazon Logo">
-    </div>
-
-    <div class="location_box border_hover">
-        <i class="fa-solid fa-location-dot loc_icon"></i>
-        <div class="loc_text_container">
-            <span class="loc_label">Deliver to Manauli</span>
-            <span class="loc_update">Update location 140306</span>
-        </div>
-    </div>
-    
-    <div class="nav_search">
-        <select class="search_select">
-            <option value="all">All</option>
-            <option value="electronics">Electronics</option>
-            <option value="fashion">Fashion</option>
-            <option value="home">Home & Kitchen</option>
-            <option value="books">Books</option>
-            <option value="beauty">Beauty & Personal Care</option>
-        </select>
-        <input type="text" class="search_input" placeholder="Search Amazon.in">
-        <button class="search_button" type="submit" aria-label="Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </div>
-
-    <!-- Right-side Navigation Elements -->
-    <div class="nav_right">
-
-        <!-- 1. Language Selector -->
-        <div class="nav_item border_hover lang_box">
-            <span class="flag_icon">🇮🇳</span>
-            <span class="lang_code">EN</span>
-            <i class="fa-solid fa-caret-down nav_caret"></i>
+        <div class="nav_logo border_hover">
+            <img src="{% static 'images/amazon_logo.png' %}" alt="Amazon Logo">
         </div>
 
-        <!-- 2. Account & Lists -->
-        <div class="nav_item border_hover">
-            <span class="nav_line_one">Hello, sign in</span>
-            <div class="nav_line_two">
-                <span>Account & Lists</span>
+        <div class="location_box border_hover">
+            <i class="fa-solid fa-location-dot loc_icon"></i>
+            <div class="loc_text_container">
+                <span class="loc_label">Deliver to Manauli</span>
+                <span class="loc_update">Update location 140306</span>
+            </div>
+        </div>
+        
+        <div class="nav_search">
+            <select class="search_select">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home & Kitchen</option>
+                <option value="books">Books</option>
+                <option value="beauty">Beauty & Personal Care</option>
+            </select>
+            <input type="text" class="search_input" placeholder="Search Amazon.in">
+            <button class="search_button" type="submit" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <!-- Right-side Navigation Elements -->
+        <div class="nav_right">
+
+            <!-- 1. Language Selector -->
+            <div class="nav_item border_hover lang_box">
+                <span class="flag_icon">🇮🇳</span>
+                <span class="lang_code">EN</span>
                 <i class="fa-solid fa-caret-down nav_caret"></i>
             </div>
-        </div>
 
-        <!-- 3. Returns & Orders -->
-        <div class="nav_item border_hover">
-            <span class="nav_line_one">Returns</span>
-            <span class="nav_line_two">& Orders</span>
-        </div>
-
-        <!-- 4. Cart -->
-        <div class="nav_item border_hover cart_box">
-            <div class="cart_icon_container">
-                <span class="cart_count">0</span>
-                <i class="fa-solid fa-cart-shopping cart_icon"></i>
+            <!-- 2. Account & Lists -->
+            <div class="nav_item border_hover">
+                <span class="nav_line_one">Hello, sign in</span>
+                <div class="nav_line_two">
+                    <span>Account & Lists</span>
+                    <i class="fa-solid fa-caret-down nav_caret"></i>
+                </div>
             </div>
-            <span class="cart_text">Cart</span>
+
+            <!-- 3. Returns & Orders -->
+            <div class="nav_item border_hover">
+                <span class="nav_line_one">Returns</span>
+                <span class="nav_line_two">& Orders</span>
+            </div>
+
+            <!-- 4. Cart -->
+            <div class="nav_item border_hover cart_box">
+                <div class="cart_icon_container">
+                    <span class="cart_count">0</span>
+                    <i class="fa-solid fa-cart-shopping cart_icon"></i>
+                </div>
+                <span class="cart_text">Cart</span>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Secondary Sub-Navbar -->
+    <nav class="sub_navbar">
+        <div class="sub_nav_left">
+            <!-- Hamburger / "All" Menu Trigger -->
+            <div class="sub_nav_item border_hover all_menu" id="openSidebarBtn">
+                <i class="fa-solid fa-bars"></i>
+                <span>All</span>
+            </div>
+
+            <!-- Quick Links -->
+            <a href="#" class="sub_nav_item border_hover">Fresh</a>
+            <a href="#" class="sub_nav_item border_hover">Amazon miniTV</a>
+            <a href="#" class="sub_nav_item border_hover">Sell</a>
+            <a href="#" class="sub_nav_item border_hover">Best Sellers</a>
+            <a href="#" class="sub_nav_item border_hover">Today's Deals</a>
+            <a href="#" class="sub_nav_item border_hover">Mobiles</a>
+            <a href="#" class="sub_nav_item border_hover">Prime</a>
+            <a href="#" class="sub_nav_item border_hover">Customer Service</a>
+            <a href="#" class="sub_nav_item border_hover">Electronics</a>
+            <a href="#" class="sub_nav_item border_hover">Home & Kitchen</a>
         </div>
 
-    </div>
-</header>
+        <!-- Right-side promo / banner text -->
+        <div class="sub_nav_right">
+            <a href="#" class="sub_nav_item border_hover promo_link">
+                <span>New Launches from Mobiles, Electronics & more</span>
+            </a>
+        </div>
+    </nav>
 
-<!-- Secondary Sub-Navbar -->
-<nav class="sub_navbar">
-    <div class="sub_nav_left">
-        <!-- Hamburger / "All" Menu -->
-        <div class="sub_nav_item border_hover all_menu">
-            <i class="fa-solid fa-bars"></i>
-            <span>All</span>
+    <!-- Main Content Area -->
+    <!-- Main Content Area: Amazon.in Festive & Personalized Feed -->
+    <main class="main_content">
+
+        <!-- Row 1: Top Festive Colorful Event Cards (Great Indian Festival Style) -->
+        <section class="festive_cards_wrapper">
+            <div class="festive_cards_container">
+
+                <!-- Card 1: Daily Needs (Deep Emerald Green) -->
+                <div class="festive_card theme_emerald">
+                    <h2 class="festive_title">Deals on daily needs for you</h2>
+                    <div class="festive_2x2">
+                        <div class="f_item">
+                            <img src="https://www.quickpantry.in/cdn/shop/files/harpic-disinfectant-toilet-cleaner-quick-pantry.jpg?v=1729185133&width=1214" alt="Cleaners">
+                        </div>
+                        <div class="f_item">
+                            <img src="https://m.media-amazon.com/images/I/61s5orKgmwL._AC_UF1000,1000_QL80_.jpg" alt="Surf Excel">
+                        </div>
+                        <div class="f_item">
+                            <img src="https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9pNS53YWxtYXJ0aW1hZ2VzLmNvbS9zZW8vR2lsbGV0dGUtU2Vuc29yMy1NZW4tcy1EaXNwb3NhYmxlLVJhem9yLUJsdWUtOC1SYXpvcnNfOWIzNmNiMjMtYzAwYy00OGQ0LTk0NjItMjRjNDJhZjkxNzkyLmUwYzUxNmY4YzMxYjI1NWJmYjIyMGEzY2ZjNmFmOTRiLmpwZWc.jpg" alt="Razor">
+                        </div>
+                        <div class="f_item">
+                            <img src="https://www.quickpantry.in/cdn/shop/files/SurfExcelLiquidDetergent-MaticTopLoad1L.webp?v=1737907506" alt="Detergent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Popular Deals with Discount Tags (Forest Green) -->
+                <div class="festive_card theme_forest">
+                    <h2 class="festive_title">Shop popular deals</h2>
+                    <div class="festive_2x2">
+                        <div class="f_item">
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=200" alt="Microphone">
+                            <span class="f_badge">57% off</span>
+                        </div>
+                        <div class="f_item">
+                            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=200" alt="Cycle">
+                            <span class="f_badge">44% off</span>
+                        </div>
+                        <div class="f_item">
+                            <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=200" alt="Bicycle">
+                            <span class="f_badge">45% off</span>
+                        </div>
+                        <div class="f_item">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200" alt="Shoes">
+                            <span class="f_badge">50% off</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Furniture (Teal Green + Great Indian Festival Bank Offer) -->
+                <div class="festive_card theme_teal">
+                    <div class="festive_card_header">
+                        <span class="f_head_main">Min. 50% off</span>
+                        <span class="f_head_sub">Deals on furniture</span>
+                    </div>
+                    <div class="f_single_hero">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400" alt="Bed">
+                    </div>
+                    <div class="festival_ribbon">
+                        <div class="ribbon_top">
+                            <span class="pill_tag">Deals Revealed</span>
+                            <div class="fest_brand">Great Indian Festival</div>
+                        </div>
+                        <div class="ribbon_bank">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <span><strong>SBI Card</strong> | 10% Instant Discount*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Fashion (Ruby Crimson) -->
+                <div class="festive_card theme_ruby">
+                    <div class="festive_card_header">
+                        <span class="f_head_main">50-80% off</span>
+                        <span class="f_head_sub">Fashion & Accessories</span>
+                    </div>
+                    <div class="f_single_hero">
+                        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400" alt="Apparel">
+                    </div>
+                    <div class="festival_ribbon">
+                        <div class="ribbon_top">
+                            <span class="pill_tag">Deals Revealed</span>
+                            <div class="fest_brand">Great Indian Festival</div>
+                        </div>
+                        <div class="ribbon_bank">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <span><strong>SBI Card</strong> | 10% Instant Discount*</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Smartphones (Bright Orange) -->
+                <div class="festive_card theme_orange">
+                    <div class="festive_card_header">
+                        <span class="f_tag_kicker">Smartphones</span>
+                        <span class="f_head_main">Festive Price. Early Deals.</span>
+                    </div>
+                    <div class="f_single_hero">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="Smartphones">
+                    </div>
+                    <div class="festival_ribbon">
+                        <div class="ribbon_top">
+                            <span class="pill_tag">Shop early deals now</span>
+                            <div class="fest_brand">Great Indian Festival</div>
+                        </div>
+                        <div class="ribbon_bank">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <span><strong>SBI Card</strong> | 10% Instant Discount*</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Row 2: Standard Clean White Product Recommendation Cards -->
+        <section class="in_cards_section">
+            <div class="in_standard_grid">
+
+                <!-- Card A: Recommended deals for you (with Deals & Percent badges) -->
+                <div class="in_white_card">
+                    <div class="card_top_bar">
+                        <h3>Recommended deals for you</h3>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="product_quad">
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=200" alt="Jeans">
+                            </div>
+                            <div class="p_deal_meta">
+                                <span class="badge_red">59% off</span>
+                                <span class="text_deal">Limited time deal</span>
+                            </div>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=200" alt="Iron">
+                            </div>
+                            <div class="p_deal_meta">
+                                <span class="badge_red">16% off</span>
+                                <span class="text_deal">Limited time deal</span>
+                            </div>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200" alt="Fashion top">
+                            </div>
+                            <div class="p_deal_meta">
+                                <span class="badge_red">70% off</span>
+                                <span class="text_deal">Limited time deal</span>
+                            </div>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=200" alt="Dress">
+                            </div>
+                            <div class="p_deal_meta">
+                                <span class="badge_red">78% off</span>
+                                <span class="text_deal">Limited time deal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card B: Build your computer (with Amazon superscript Rupee pricing) -->
+                <div class="in_white_card">
+                    <div class="card_top_bar">
+                        <h3>Build your computer</h3>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="product_quad">
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTonECLEameIC5EavwFiquCtKq_Eh7_VYOuQX9VhbIcGMAJ6P6huLSlgCmT&s=10" alt="USB Cable">
+                            </div>
+                            <p class="p_title">Mifaso 33W Type A to...</p>
+                            <p class="p_price"><span class="rupee">₹</span>359<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/81-G0GiMPyL._AC_UF1000,1000_QL80_.jpg" alt="Motherboard">
+                            </div>
+                            <p class="p_title">ASUS Prime H510M-E...</p>
+                            <p class="p_price"><span class="rupee">₹</span>8,999<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/81wZP-QhheL.jpg" alt="Motherboard">
+                            </div>
+                            <p class="p_title">MSI PRO H610M-B Mo...</p>
+                            <p class="p_price"><span class="rupee">₹</span>9,739<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/51vTDOi0KCL._AC_UF1000,1000_QL80_.jpg" alt="Intel Core Ultra">
+                            </div>
+                            <p class="p_title">Intel® Core™ Ultra 5 D...</p>
+                            <p class="p_price"><span class="rupee">₹</span>14,299</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card C: New picks for you -->
+                <div class="in_white_card">
+                    <div class="card_top_bar">
+                        <h3>New picks for you</h3>
+                    </div>
+                    <div class="product_quad">
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/71XL3L-JagL.jpg" alt="Grooming kit">
+                            </div>
+                            <p class="p_title">Beardo Godfather Pre...</p>
+                            <p class="p_price"><span class="rupee">₹</span>2,999<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/61Wfuh9LXsL._AC_UF1000,1000_QL80_.jpg" alt="Shaver">
+                            </div>
+                            <p class="p_title">Philips Showerproof B...</p>
+                            <p class="p_price"><span class="rupee">₹</span>989<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/613UQ+C5RBL._AC_UF1000,1000_QL80_.jpg" alt="Trimmer">
+                            </div>
+                            <p class="p_title">Philips World's No.1 El...</p>
+                            <p class="p_price"><span class="rupee">₹</span>4,019<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/71cAYYJDZzL.jpg" alt="Shaving kit">
+                            </div>
+                            <p class="p_title">Bombay Shaving Com...</p>
+                            <p class="p_price"><span class="rupee">₹</span>599<span class="paise">00</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card D: Recommendations for you -->
+                <div class="in_white_card">
+                    <div class="card_top_bar">
+                        <h3>Recommendations for you</h3>
+                    </div>
+                    <div class="product_quad">
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/71pHDiPvuoL._AC_UF894,1000_QL80_.jpg" alt="Garam Masala">
+                            </div>
+                            <p class="p_title">Orika Garam Masala P...</p>
+                            <p class="p_price"><span class="rupee">₹</span>90<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/71HwXksWbOL.jpg" alt="Oregano">
+                            </div>
+                            <p class="p_title">Orika Oregano Orega...</p>
+                            <p class="p_price"><span class="rupee">₹</span>95<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/514lyPa0ocL._AC_UF894,1000_QL80_.jpg" alt="Chilli flakes">
+                            </div>
+                            <p class="p_title">Orika Red Chilli Flakes...</p>
+                            <p class="p_price"><span class="rupee">₹</span>212<span class="paise">00</span></p>
+                        </div>
+                        <div class="p_box">
+                            <div class="p_img_wrap">
+                                <img src="https://m.media-amazon.com/images/I/51TAJSmCq6L._AC_UF894,1000_QL80_.jpg" alt="Italian seasoning">
+                            </div>
+                            <p class="p_title">Orika Italian Seasonin...</p>
+                            <p class="p_price"><span class="rupee">₹</span>176<span class="paise">00</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Dark Backdrop Overlay -->
+    <div class="sidebar_overlay" id="sidebarOverlay"></div>
+
+    <!-- Sliding Sidebar Container -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Close Button (X) -->
+        <button class="sidebar_close_btn" id="sidebarCloseBtn" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Sidebar Header -->
+        <div class="sidebar_header">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>Hello, sign in</span>
         </div>
 
-        <!-- Quick Links -->
-        <a href="#" class="sub_nav_item border_hover">Fresh</a>
-        <a href="#" class="sub_nav_item border_hover">Amazon miniTV</a>
-        <a href="#" class="sub_nav_item border_hover">Sell</a>
-        <a href="#" class="sub_nav_item border_hover">Best Sellers</a>
-        <a href="#" class="sub_nav_item border_hover">Today's Deals</a>
-        <a href="#" class="sub_nav_item border_hover">Mobiles</a>
-        <a href="#" class="sub_nav_item border_hover">Prime</a>
-        <a href="#" class="sub_nav_item border_hover">Customer Service</a>
-        <a href="#" class="sub_nav_item border_hover">Electronics</a>
-        <a href="#" class="sub_nav_item border_hover">Home & Kitchen</a>
-    </div>
+        <!-- Sidebar Content Sections -->
+        <div class="sidebar_content">
+            <div class="sidebar_section">
+                <h3>Trending</h3>
+                <ul>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Movers and Shakers</a></li>
+                </ul>
+            </div>
 
-    <!-- Right-side promo / banner text -->
-    <div class="sub_nav_right">
-        <a href="#" class="sub_nav_item border_hover promo_link">
-            <span>New Launches from Mobiles, Electronics & more</span>
-        </a>
-    </div>
-</nav>
+            <div class="sidebar_divider"></div>
 
+            <div class="sidebar_section">
+                <h3>Digital Content & Devices</h3>
+                <ul>
+                    <li><a href="#">Amazon miniTV- FREE entertainment <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Echo & Alexa <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Fire TV <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Kindle E-readers & eBooks <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Audible Audiobooks <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Amazon Prime Video <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Amazon Prime Music <i class="fa-solid fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar_divider"></div>
+
+            <div class="sidebar_section">
+                <h3>Shop by Category</h3>
+                <ul>
+                    <li><a href="#">Mobiles, Computers <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">TV, Appliances, Electronics <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Men's Fashion <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Women's Fashion <i class="fa-solid fa-angle-right"></i></a></li>
+                    <li><a href="#">Home, Kitchen, Pets <i class="fa-solid fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar_divider"></div>
+
+            <div class="sidebar_section">
+                <h3>Programs & Features</h3>
+                <ul>
+                    <li><a href="#">Amazon Pay</a></li>
+                    <li><a href="#">Gift Cards & Mobile Recharges</a></li>
+                    <li><a href="#">Amazon Launchpad</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar_divider"></div>
+
+            <div class="sidebar_section">
+                <h3>Help & Settings</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Sign in</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sidebar JavaScript -->
+    <script src="{% static 'js/sidebar.js' %}"></script>
 </body>
 </html>
